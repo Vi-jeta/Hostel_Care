@@ -39,7 +39,7 @@ A full-stack web application for managing hostel complaints submitted by student
 ### Warden Dashboard
 ![Warden Dashboard](./images/admindashboard.png)
 ### Status Update
-![Status Update](./images/Statusupdate.png)
+![Status Update](./images/statusupdate.png)
 
 
 ---
