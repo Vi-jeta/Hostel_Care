@@ -118,7 +118,7 @@
           <strong>${c.title}</strong>
           <span class="complaint-date">${c.date}</span>
         </div>
-        <p><b>Status:</b> ${c.status || 'Open'} | <b>Roll:</b> ${c.roll}</p>
+<p><b>Status:</b> <span class="status-text ${c.status?.toLowerCase() || 'open'}">${c.status || 'Open'}</span> | <b>Roll:</b> ${c.roll}</p>
         <p><b>Room:</b> ${c.room} | <b>Hostel:</b> ${c.hostel}</p>
         <p>${c.text}</p>
                     ${c.image_url ? `<div class="complaint-image"><strong>Image:</strong><br><img src="${c.image_url}" alt="Evidence" style="max-width:100px;max-height:100px;"></div>` : ""}

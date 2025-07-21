@@ -308,4 +308,27 @@ form select option {
   background-color: rgba(0, 0, 0, 0.8); /* dark background */
   color: #ffffff;                       /* white text */
 }
+.status-text {
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 5px;
+  margin-left: 5px;
+  font-size: 0.85rem;
+  display: inline-block;
+}
 
+/* Status colors */
+.status-text.open {
+  background-color: #28a745; /* green */
+  color: white;
+}
+
+.status-text.closed {
+  background-color: #dc3545; /* red */
+  color: white;
+}
+
+.status-text.resolved {
+  background-color: #007bff; /* blue */
+  color: white;
+}
