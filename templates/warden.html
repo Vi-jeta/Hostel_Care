@@ -229,7 +229,7 @@
 
       document.querySelector(".logout-btn").addEventListener("click", async () => {
         try {
-          const res = await fetch("/logout", {
+          const res = await fetch("https://hostel-care.onrender.com/logout", {
             method: "POST",
             credentials: "include",
           });

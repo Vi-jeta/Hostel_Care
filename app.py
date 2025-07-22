@@ -19,12 +19,11 @@ app.secret_key = os.getenv("SECRET_KEY")
 
 app.permanent_session_lifetime = timedelta(days=1)
 
-UPLOAD_FOLDER = 'uploads'
+app.config['UPLOAD_FOLDER'] = 'static/uploads'
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-
-app.config["SESSION_COOKIE_DOMAIN"] = "hostel-care.onrender.com"
 
 
 
@@ -321,6 +320,9 @@ def not_found(e):
 def login_redirect():
     return render_template("index.html")
 
-    
+@app.route('/<path:filename>')
+def static_files(filename):
+    return app.send_static_file(filename)
+
 if __name__ == '__main__':
     app.run(debug=True, port=5500)

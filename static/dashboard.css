@@ -332,3 +332,15 @@ form select option {
   background-color: #007bff; /* blue */
   color: white;
 }
+#customAlert {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  color: black;
+  z-index: 9999;
+}
