@@ -14,6 +14,10 @@ import os
 load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
+app.config["SESSION_COOKIE_DOMAIN"] = "hostel-care.onrender.com"
+app.config["SESSION_COOKIE_SAMESITE"] = "None"
+app.config["SESSION_COOKIE_SECURE"] = "True"
+
 CORS(app, origins=["https://hostel-care.onrender.com"], supports_credentials=True)
 app.secret_key = os.getenv("SECRET_KEY")
 
@@ -227,7 +231,7 @@ def update_complaint_status(complaint_id):
         print("Update Error:", e)
         return jsonify({"message": "Error updating complaint"}), 500
     
-    import random
+   
 
 @app.route("/request_otp", methods=["POST"])
 def request_otp():

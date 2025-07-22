@@ -198,9 +198,16 @@ const response = await fetch("https://hostel-care.onrender.com/submit_complaint"
   });
 
   function showCustomAlert(message) {
-    document.getElementById('customAlertMsg').innerHTML = message;
-    document.getElementById('customAlert').style.display = 'flex';
-  }
+  const alertBox = document.getElementById('customAlert');
+  document.getElementById('customAlertMsg').innerHTML = message;
+  alertBox.style.display = 'flex';
+
+  setTimeout(() => {
+    alertBox.style.display = 'none';
+  }, 3000); // Hide after 3 seconds
+}
+
+  
 
   function closeCustomAlert() {
     document.getElementById('customAlert').style.display = 'none';
