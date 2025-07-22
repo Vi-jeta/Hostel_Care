@@ -132,7 +132,7 @@
 
   async function fetchComplaints() {
     try {
-      const res = await fetch("https://hostel-care.onrender.com/submit_complaint", { credentials: "include" });
+const res = await fetch("https://hostel-care.onrender.com/api/complaints", { credentials: "include" });
       if (!res.ok) throw new Error("Failed to fetch complaints");
       const data = await res.json();
       complaints.length = 0;

@@ -14,7 +14,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
-CORS(app, origins=["http://127.0.0.1:5500"], supports_credentials=True)
+CORS(app, origins=["https://hostel-care.onrender.com"], supports_credentials=True)
 app.secret_key = os.getenv("SECRET_KEY")
 
 app.permanent_session_lifetime = timedelta(days=1)
@@ -24,6 +24,7 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
+app.config["SESSION_COOKIE_DOMAIN"] = "hostel-care.onrender.com"
 
 
 
@@ -312,7 +313,13 @@ def test_mongo_insert():
         return "✅ Test insert successful"
     except Exception as e:
         return f"❌ Insert failed: {e}"
+@app.errorhandler(404)
+def not_found(e):
+    return render_template("index.html")  # or a 404.html page if you have one
 
+@app.route("/login")
+def login_redirect():
+    return render_template("index.html")
 
     
 if __name__ == '__main__':
